@@ -1,24 +1,27 @@
 #include <iostream>
+#include <vector>
 #include <string>
-using namespace std;
+
 int main()
 {
+    using namespace std;
     string s;
     cin >> s;
-    int count1{}, count2{};
+    int count{}, f;
     for (int i = 0; i < s.size(); i++)
     {
         if (s[i] == 'f')
-        {
-            count2++;
-            continue;
-        }
+            count++;
+            if (count == 2)
+            {
+                cout << 3;
+                break;
+            }
+        
     }
-    if (count1 > 0)
-        cout << 3;
-    else if (count2 == 1)
+    if (count == 1)
         cout << -1;
-    else if (count2 == 0)
+    else if (count == 0)
         cout << -2;
-    return 0;
+
 }
